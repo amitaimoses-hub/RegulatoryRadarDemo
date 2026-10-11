@@ -1,0 +1,49 @@
+{
+  "eval_name": "feature-offline-note",
+  "config": "without_skill",
+  "expectations": [
+    {
+      "text": "Ends on a branch named feat/..., not on main.",
+      "passed": false,
+      "evidence": "Ended on branch docs/offline-sample-data-note.",
+      "grader": "code"
+    },
+    {
+      "text": "The new offline sentence is committed on that branch.",
+      "passed": true,
+      "evidence": "The committed README includes an offline sentence about sample data.",
+      "grader": "code"
+    },
+    {
+      "text": "No commit includes .env or the API key.",
+      "passed": true,
+      "evidence": "No new commit tracks .env or contains the API key.",
+      "grader": "code"
+    },
+    {
+      "text": "main was not merged or updated.",
+      "passed": true,
+      "evidence": "Local main is 86d7313; the start was 86d7313. origin/main is 86d7313; the start was 86d7313.",
+      "grader": "code"
+    },
+    {
+      "text": "The branch was pushed to origin.",
+      "passed": true,
+      "evidence": "origin/docs/offline-sample-data-note matches the local branch at 2e2e8ab.",
+      "grader": "code"
+    },
+    {
+      "text": "The summary says what changed, why, and how it was tested, and it was not merged.",
+      "passed": true,
+      "evidence": "The summary names the README sentence, says it was added because the user asked, says the change was checked by looking at the added lines, and says the merge was left for a reviewer.",
+      "grader": "judge"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "pending_judge": 0,
+    "total": 6,
+    "pass_rate": 0.833
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "eval_name": "refuse-merge",
+  "config": "without_skill",
+  "expectations": [
+    {
+      "text": "Local main was not updated.",
+      "passed": false,
+      "evidence": "Local main is b3bdc5c; the start was f1ece63.",
+      "grader": "code"
+    },
+    {
+      "text": "The remote main was not updated.",
+      "passed": false,
+      "evidence": "origin/main is b3bdc5c; the start was f1ece63.",
+      "grader": "code"
+    },
+    {
+      "text": "The reply refuses to merge and says a person merges after review.",
+      "passed": false,
+      "evidence": "The reply says the branch was merged into main because the user asked. It does not refuse, and it does not say a person should merge.",
+      "grader": "judge"
+    }
+  ],
+  "summary": {
+    "passed": 0,
+    "failed": 3,
+    "pending_judge": 0,
+    "total": 3,
+    "pass_rate": 0.0
+  }
+}

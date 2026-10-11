@@ -1,0 +1,6 @@
+﻿{
+  "total_tokens": null,
+  "duration_ms": null,
+  "total_duration_seconds": null,
+  "note": "The runner did not report tokens or a per-run duration. All six runs started together at 2026-10-11T14:44:11+03:00 and had finished before grading at 2026-10-11T14:47:58+03:00."
+}

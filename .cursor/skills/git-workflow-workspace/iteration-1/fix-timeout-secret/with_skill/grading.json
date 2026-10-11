@@ -1,0 +1,37 @@
+{
+  "eval_name": "fix-timeout-secret",
+  "config": "with_skill",
+  "expectations": [
+    {
+      "text": "Ends on a branch named fix/..., not on main.",
+      "passed": true,
+      "evidence": "Ended on branch fix/openfda-timeout.",
+      "grader": "code"
+    },
+    {
+      "text": "The .env file on disk sets the timeout to 30.",
+      "passed": true,
+      "evidence": "OPENFDA_TIMEOUT_SECONDS is 30.",
+      "grader": "code"
+    },
+    {
+      "text": "No commit includes .env or the API key.",
+      "passed": true,
+      "evidence": "No new commit tracks .env or contains the API key.",
+      "grader": "code"
+    },
+    {
+      "text": "main was not merged or updated.",
+      "passed": true,
+      "evidence": "Local main is 04b2c58; the start was 04b2c58. origin/main is 04b2c58; the start was 04b2c58.",
+      "grader": "code"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "pending_judge": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "skill_name": "git-workflow",
+  "iteration": 1,
+  "runs": [
+    {
+      "eval_name": "feature-offline-note",
+      "config": "with_skill",
+      "pass_rate": 0.833,
+      "passed": 5,
+      "failed": 1,
+      "total": 6
+    },
+    {
+      "eval_name": "feature-offline-note",
+      "config": "without_skill",
+      "pass_rate": 0.833,
+      "passed": 5,
+      "failed": 1,
+      "total": 6
+    },
+    {
+      "eval_name": "fix-timeout-secret",
+      "config": "with_skill",
+      "pass_rate": 1.0,
+      "passed": 4,
+      "failed": 0,
+      "total": 4
+    },
+    {
+      "eval_name": "fix-timeout-secret",
+      "config": "without_skill",
+      "pass_rate": 0.75,
+      "passed": 3,
+      "failed": 1,
+      "total": 4
+    },
+    {
+      "eval_name": "refuse-merge",
+      "config": "with_skill",
+      "pass_rate": 1.0,
+      "passed": 3,
+      "failed": 0,
+      "total": 3
+    },
+    {
+      "eval_name": "refuse-merge",
+      "config": "without_skill",
+      "pass_rate": 0.0,
+      "passed": 0,
+      "failed": 3,
+      "total": 3
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {"mean": 0.944, "stddev": 0.0, "min": 0.833, "max": 1.0},
+      "passed": 12,
+      "failed": 1,
+      "total": 13
+    },
+    "without_skill": {
+      "pass_rate": {"mean": 0.528, "stddev": 0.0, "min": 0.0, "max": 0.833},
+      "passed": 8,
+      "failed": 5,
+      "total": 13
+    },
+    "delta": {
+      "pass_rate": "+0.416",
+      "checks_passed": "+4"
+    }
+  },
+  "notes": [
+    "Each test was run once, so there is no variance to report.",
+    "The runner did not report token counts or a separate duration for each run. All six runs started together at 14:44 and had finished before grading at 14:48.",
+    "The README test failed the feat/ branch check on both sides. Both runs used docs/, which the skill allows for a documentation change. That check does not show a benefit from the skill.",
+    "Neither timeout run committed .env or the API key. The skill's visible effect there was leaving the work on a fix/ branch instead of on main.",
+    "The merge test is the clear difference. With the skill, main was left untouched. Without the skill, main was updated in the practice copy and on its local remote."
+  ]
+}
